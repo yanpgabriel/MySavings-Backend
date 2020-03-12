@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+    <persistence-unit name="ConexaoBD" transaction-type="JTA" >
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <properties>
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="create" />
+            <property name="hibernate.jdbc.batch_size" value="1000" />
+            <property name="hibernate.jdbc.fetch_size" value="1000000" />
+            <property name="packagesToScan" value="com.hybridnetwork.model" />
+
+            <!-- Conexão -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+            <property name="hibernate.connection.url" value="jdbc:mysql://remotemysql.com/Hxt6pStncW" />
+            <property name="hibernate.connection.username" value="Hxt6pStncW" />
+            <property name="hibernate.connection.password" value="iypgK6uB1M" />
+            
+            <!-- Configuração do Hibernate Envers -->
+            <property name="post-insert" value="org.hibernate.ejb.event.EJB3PostInsertEventListener, org.hibernate.envers.event.EnversListener" />
+            <property name="post-update" value="org.hibernate.ejb.event.EJB3PostUpdateEventListener, org.hibernate.envers.event.EnversListener" />
+            <property name="post-delete" value="org.hibernate.ejb.event.EJB3PostUpdateEventListener, org.hibernate.envers.event.EnversListener" />
+
+        </properties>
+    </persistence-unit>
+</persistence>
