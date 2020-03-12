@@ -20,7 +20,7 @@ public class ContaRest {
     @GET
     public Response listarTodos() {
         List<ContaDTO> todas = Arrays.asList(
-                new ContaDTO(1, "Nu", new BigDecimal(0.01))
+                new ContaDTO(1, "Nu", new BigDecimal("0.01"))
         );
         return Response.ok(todas).build();
     }
