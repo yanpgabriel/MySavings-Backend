@@ -6,7 +6,7 @@ import java.math.RoundingMode;
 
 @Entity(name = "tb_conta")
 public class Conta {
-
+    
     @Id
     @Column(unique = true, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
