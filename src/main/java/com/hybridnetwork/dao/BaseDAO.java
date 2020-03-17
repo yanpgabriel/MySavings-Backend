@@ -57,7 +57,7 @@ public abstract class BaseDAO {
         }
     }
 
-    public <T> boolean deleteById(Class<T> clazz, Long id) {
+    public <T> boolean deleteById(Class<T> clazz, Integer id) {
         try {
             T object = em.find(clazz, id);
             em.remove(object);

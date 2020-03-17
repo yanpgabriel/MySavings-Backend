@@ -13,7 +13,7 @@ public class Conta {
     private Integer id;
     @Column(nullable = false)
     private String nome;
-    @Column(nullable = false, precision = 2)
+    @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal saldoInicial;
 
     public Conta() { }
