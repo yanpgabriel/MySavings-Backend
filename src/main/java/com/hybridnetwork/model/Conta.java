@@ -11,18 +11,16 @@ public class Conta {
     @Column(unique = true, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(length = 7)
+    private String cor;
     @Column(nullable = false)
     private String nome;
+    @Column
+    private String icone;
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal saldoInicial;
 
     public Conta() { }
-
-    public Conta(Integer id, String nome, BigDecimal saldoInicial) {
-        this.id = id;
-        this.nome = nome;
-        this.saldoInicial = saldoInicial.setScale(2, RoundingMode.HALF_EVEN);
-    }
 
     public Integer getId() {
         return id;
@@ -30,6 +28,14 @@ public class Conta {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
     }
 
     public String getNome() {
@@ -40,6 +46,14 @@ public class Conta {
         this.nome = nome;
     }
 
+    public String getIcone() {
+        return icone;
+    }
+
+    public void setIcone(String icone) {
+        this.icone = icone;
+    }
+
     public BigDecimal getSaldoInicial() {
         return saldoInicial;
     }
@@ -47,5 +61,4 @@ public class Conta {
     public void setSaldoInicial(BigDecimal saldoInicial) {
         this.saldoInicial = saldoInicial.setScale(2, RoundingMode.HALF_EVEN);
     }
-
 }

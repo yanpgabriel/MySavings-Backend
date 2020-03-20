@@ -1,19 +1,22 @@
 package com.hybridnetwork.dto;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 
 public class ContaDTO extends AbstractDTO {
 
+    private String cor;
     private String nome;
+    private String icone;
     private BigDecimal saldoInicial;
 
     public ContaDTO() { super(); }
 
-    public ContaDTO(Integer id, String nome, BigDecimal saldoInicial) {
-        super(id);
-        this.nome = nome;
-        this.saldoInicial = saldoInicial.setScale(2, RoundingMode.HALF_EVEN);
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
     }
 
     public String getNome() {
@@ -24,11 +27,19 @@ public class ContaDTO extends AbstractDTO {
         this.nome = nome;
     }
 
+    public String getIcone() {
+        return icone;
+    }
+
+    public void setIcone(String icone) {
+        this.icone = icone;
+    }
+
     public BigDecimal getSaldoInicial() {
         return saldoInicial;
     }
 
     public void setSaldoInicial(BigDecimal saldoInicial) {
-        this.saldoInicial = saldoInicial.setScale(2, RoundingMode.HALF_EVEN);
+        this.saldoInicial = saldoInicial;
     }
 }

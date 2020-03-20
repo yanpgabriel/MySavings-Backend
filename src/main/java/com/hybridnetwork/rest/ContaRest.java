@@ -22,7 +22,7 @@ public class ContaRest {
         if (dtoSalvo != null) {
             return Response.ok(dtoSalvo).build();
         }
-        return Response.status(Response.Status.BAD_REQUEST).entity(dtoSalvo).build();
+        return Response.status(Response.Status.BAD_REQUEST).build();
     }
 
     @PUT
@@ -31,7 +31,7 @@ public class ContaRest {
         if (dtoSalvo != null) {
             return Response.ok(dtoSalvo).build();
         }
-        return Response.status(Response.Status.BAD_REQUEST).entity(dtoSalvo).build();
+        return Response.status(Response.Status.BAD_REQUEST).build();
     }
     
     @GET
